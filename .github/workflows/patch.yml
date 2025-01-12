@@ -43,7 +43,7 @@ jobs:
         if [ "$_LATEST_VERSION" == "$LATEST_VERSION" ]; then
           echo "No new version found"
           echo "has_new_version=false" >> $GITHUB_OUTPUT
-          
+          exit 0
         fi
         echo "has_new_version=true" >> $GITHUB_OUTPUT
         curl -s -o CHANGELOG https://upgrade.mikrotik.com/routeros/$LATEST_VERSION/CHANGELOG
